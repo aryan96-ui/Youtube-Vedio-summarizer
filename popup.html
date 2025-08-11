@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube AI Summarizer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="bg-gray-900 text-gray-100 min-w-[320px] min-h-[340px] flex flex-col items-center justify-start p-4 rounded-2xl shadow-2xl border border-gray-800"
+      style="box-shadow: 0 8px 24px #1a1a1a, 0 1.5px 5px #3d3d3d;">
+
+  <h2 class="text-2xl font-extrabold mb-4 text-indigo-400 drop-shadow-lg">YouTube AI Summarizer</h2>
+  <input id="youtubeLink" type="text" placeholder="Paste YouTube video link here..."
+         class="w-full mb-3 px-3 py-2 rounded-xl border-2 border-indigo-400 bg-gray-800 text-indigo-100 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+  <button id="summarizeBtn"
+          class="bg-gradient-to-r from-indigo-600 to-blue-500 text-white font-bold py-2 px-4 rounded-2xl shadow-lg mb-4 hover:scale-105 active:scale-95 transition-all"
+          style="box-shadow: 0 2px 8px #2e1065;">
+    Summarize Video
+  </button>
+
+  <div id="spinner" class="flex items-center justify-center w-full my-4 hidden">
+    <!-- 3D Spinner -->
+    <div class="animate-spin rounded-full h-10 w-10 border-t-4 border-b-4 border-indigo-500 drop-shadow-lg"
+         style="border-left: 4px solid #6366f1; border-right: 4px solid #3b82f6; box-shadow: 0 0 10px #6366f1;">
+    </div>
+  </div>
+
+  <textarea id="summaryArea"
+            class="w-full h-36 bg-gradient-to-br from-gray-800 to-gray-900 text-indigo-100 rounded-xl border-2 border-indigo-400 p-3 mt-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
+            readonly
+            placeholder="Summary will appear here..."></textarea>
+
+  <div id="errorMsg" class="text-red-400 mt-3 text-sm font-semibold hidden"></div>
+</body>
+<script src="popup.js"></script>
+</html>
